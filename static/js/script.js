@@ -86,8 +86,8 @@ window.onload = function () {
 $(document).ready(function() {
   $('#clear-button').click(function() {
     $('#prompt').val('');
-    $('#promptOutput').val('');
-    $('#promptOutput2').val('');
+    $('#promptOutput').val('').attr("rows", "2").css("height", "auto");
+    $('#promptOutput2').val('').attr("rows", "2").css("height", "auto");
   });
 });
 
