@@ -96,10 +96,12 @@ $(document).ready(function () {
   $('#tts1').click(function (event) {
     event.preventDefault();
     var input_text = $('#promptOutput').val();
+    if (input_text){
     $.post('/text-to-speech', { input_text: input_text }, function (data) {
       var audio = new Audio('data:audio/mp3;base64,' + data.audio_content);
       audio.play();
     }, 'json');
+  }
   });
 });
 
@@ -107,9 +109,11 @@ $(document).ready(function () {
   $('#tts2').click(function (event) {
     event.preventDefault();
     var input_text = $('#promptOutput2').val();
+    if(input_text){
     $.post('/text-to-speech', { input_text: input_text }, function (data) {
       var audio = new Audio('data:audio/mp3;base64,' + data.audio_content);
       audio.play();
     }, 'json');
+  }
   });
 });
